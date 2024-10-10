@@ -2,15 +2,88 @@
 <html>
 	<head>
 		<title>Landing Page</title>
-
 		<link rel="stylesheet" href="styles.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 	</head>
 
 	<body>
 		<!--Page Content-->
-
+		<header class="page-header bg-blue">
+			<div class="header-content">
+				<img class="logo" src="./assets/logo-blue-160x160-1.png">
+				<button class="contact-us contact-primary">CONTACT US</button>
+			</div>
+		</header>
+		<section class="section-top bg-blue mb-med">
+			<div class="section-content section-content--max-width-520">
+				<h2 class="section-title-large mb-sm"><span>Integrated</span> <span class="section-title-large-bold">Marketing Services</span></h2>
+				<p class ="text-content">We turn your marketing plans into action by building on your ideas and executing initiaves alongside you and your team.
+					Get a complete department that can pivot to different areas of marketing based on your needs.
+				</p>
+		</div>
+		</section>
+		<section>
+			<div class="section-content section-content--row-reverse">
+				<div class="image-container animated-section">
+					<img id="marketing-tools" class ="marketing-image" src="./assets/Marketing_Tools.svg">
+				</div>
+				<div class="section-content--max-width-520">
+					<h2 class="section-title mb-med">We're experts with <span class="section-title-bold">modern marketing tools,</span> so you don't have to be!</h2>
+					<p class="text-content mb-lg">
+						With hands-on experience in B2B's most innovative apps and tools, we take a data-driven approach to continually improve prospect
+						engagement. Whether we work directly out of your platform or provide our insights manually, you always get full visibility into the process.
+					</p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="section-content section-content--row-reverse">
+				<div class="section-content--max-width-530">
+					<h2 class="section-title mb-med"><span class="section-title-bold">The best way</span> to build a marketing team</h2>
+					<p class="text-content mb-med">
+						With EBQ, you're not just hiring a marketing specialist. You're getting an entire marketing department at a fraction of the cost
+						and effort of hiring internally.
+					</p>
+					<p class="text-content mb-lg">
+						For each project, we provide a Success Manager to drive high-level strategy, a Project Manager to oversee day-to-day operations,
+						and one or more Specialists working diligently to amplify your brand. 
+					</p>
+				</div>
+				<div class="image-container animated-section">
+					<img id="department-marketing" class="marketing-image" src="./assets/Complete-Department-Marketing.png">
+				</div>
+			</div>
+		</section>
+		<section class="bg-dark-blue section-bottom">
+			<div class="section-content-bottom">
+				<h2 class="bottom-text mb-lg">Looking to take your <span class="bottom-text-bold">marketing to the next level?</span></h2>
+				<button class="contact-us contact-secondary">CONTACT US</button>
+			</div>
+		</section>
 		<script type="text/javascript">
-			// Event listener JS goes here
+			// click listener
+			const buttons = document.querySelectorAll('.contact-us');
+
+			buttons.forEach((button, index) => {
+				button.addEventListener('click', () => {
+					alert("We'll be in touch!");
+				});
+			});
+
+			//animate images in
+				const sections = document.querySelectorAll('.animated-section');
+				function checkVisibility() {
+					sections.forEach((section) => {
+						const sectionTop = section.getBoundingClientRect().top;
+						const windowHeight = window.innerHeight;
+						if (sectionTop < windowHeight - 350) {
+							section.classList.add('visible');
+						}
+					});
+				}
+				window.addEventListener('scroll', checkVisibility);
 		</script>
 	</body>
 </html>
